@@ -1,0 +1,21 @@
+{
+    "title": "Syntax Highlighting",
+    "description": "Displays Code with Syntax Highlighting",
+    "majorVersion": 1,
+    "minorVersion": 0,
+    "patchVersion": 0,
+    "runnable": 1,
+    "author": "Mohammed",
+    "license": "cc-by-sa",
+    "machineName": "H5P.SyntaxHighlighting",
+    "coreApi": {
+      "majorVersion": 1,
+      "minorVersion": 0
+    },
+    "preloadedJs": [
+      { "path": "./h5p-syntax-highlighting.js" }
+    ],
+    "preloadedCss": [
+      { "path": "./css/syntaxhighlighting.css" }
+    ]
+  }

@@ -1,0 +1,22 @@
+[ 
+  { 
+    "label": "Code Snippet", 
+    "name": "code", 
+    "type": "text", 
+    "default": "function greet() {\n  console.log('Hello, {{gap1}}!');\n}",
+    "description": "Enter the code with placeholders in the form {{gap1}}, {{gap2}}, etc.",
+    "widget": "textarea"
+  },
+  {
+    "label": "Solutions",
+    "name": "solutions",
+    "type": "list",
+    "entity": "gap",
+    "field": {
+      "type": "text",
+      "name": "solution",
+      "label": "Correct answer for each gap",
+      "description": "Enter the correct text for the corresponding placeholder, in order of gap1, gap2, etc."
+    }
+  }
+]
