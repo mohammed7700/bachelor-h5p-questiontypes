@@ -10,6 +10,16 @@
             "default": false
         },
         {
+            "name": "highlightingLibrary",
+            "type": "select",
+            "label": "Highlighting Library",
+            "options": [
+                {"value": "highlight.js", "label": "highlight.js"},
+                {"value": "prismjs", "label": "prismjs"}
+            ],
+            "default": "highlight.js"
+        },
+        {
             "name": "syntaxLanguage",
             "type": "select",
             "label": "Programming language",
