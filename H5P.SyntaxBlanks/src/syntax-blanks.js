@@ -58,7 +58,7 @@ H5P.SyntaxBlanks = (function ($, Blanks) {
       if (clozeEnd === -1) {
         continue; // No end
       }
-      var clozeContent = question.substring(clozeStart, clozeEnd).replaceAll(/<\/?[a-z\-=\ "'\_]*\d?>/ig, '');
+      var clozeContent = question.substring(clozeStart, clozeEnd).replaceAll(/<\/?[a-z\-=\ "'\_<>]*\d?>/ig, '');
       var replacer = '';
       if (clozeContent.length) {
         replacer = handler(self.parseSolution(clozeContent));
