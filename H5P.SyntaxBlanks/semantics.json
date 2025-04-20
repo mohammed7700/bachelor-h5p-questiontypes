@@ -1,35 +1,45 @@
 [
     {
-        "name": "behaviour",
+        "label": "Override Marking Character",
+        "name": "clozerMarkingCharacter",
+        "type": "text",
+        "importance": "low",
+        "default": "*",
+        "optional": true,
+        "description": "The character used to mark the start and end of a cloze. For example, if you want to mark the word \"H5P\" in the sentence \"H5P is great!\", you would write \"*H5P* is great!\". The default is *."
+    },
+    {
+        "label": "Syntax Highlighting Behaviour",
+        "name": "highLightingBehaviour",
         "type": "group",
         "fields": [
-        {
-            "name": "enableSyntaxHighlighting",
-            "type": "boolean",
-            "label": "Enable syntax highlighting?",
-            "default": false
-        },
-        {
-            "name": "highlightingLibrary",
-            "type": "select",
-            "label": "Highlighting Library",
-            "options": [
-                {"value": "highlight.js", "label": "highlight.js"},
-                {"value": "prismjs", "label": "prismjs"}
-            ],
-            "default": "highlight.js"
-        },
-        {
-            "name": "syntaxLanguage",
-            "type": "select",
-            "label": "Programming language",
-            "options": [
-                {"value": "javascript", "label": "JavaScript"},
-                {"value": "java", "label": "Java"},
-                {"value": "python", "label": "Python"}
-            ],
-            "default": "javascript"
-        }
+            {
+                "name": "enableSyntaxHighlighting",
+                "type": "boolean",
+                "label": "Enable syntax highlighting?",
+                "default": false
+            },
+            {
+                "name": "highlightingLibrary",
+                "type": "select",
+                "label": "Highlighting Library",
+                "options": [
+                    {"value": "highlight.js", "label": "highlight.js"},
+                    {"value": "prismjs", "label": "prismjs"}
+                ],
+                "default": "highlight.js"
+            },
+            {
+                "name": "syntaxLanguage",
+                "type": "select",
+                "label": "Programming language",
+                "options": [
+                    {"value": "javascript", "label": "JavaScript"},
+                    {"value": "java", "label": "Java"},
+                    {"value": "python", "label": "Python"}
+                ],
+                "default": "javascript"
+            }
         ]
     },
     {
