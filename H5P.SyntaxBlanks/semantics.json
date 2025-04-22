@@ -6,7 +6,7 @@
         "importance": "low",
         "default": "*",
         "optional": true,
-        "description": "The character used to mark the start and end of a cloze. For example, if you want to mark the word \"H5P\" in the sentence \"H5P is great!\", you would write \"*H5P* is great!\". The default is *."
+        "description": "The character used to mark the start and end of a cloze. For example, if you want to mark the word \"H5P\" in the sentence \"H5P is great!\", you would write \"*H5P* is great!\". The default is *.<br><strong>Warning: More than one character breaks the component.</strong>"
     },
     {
         "label": "Syntax Highlighting Behaviour",
@@ -17,6 +17,7 @@
                 "name": "enableSyntaxHighlighting",
                 "type": "boolean",
                 "label": "Enable syntax highlighting?",
+                "description": "<strong>Warning: Any substring enclosed by '<' and >' contained in a clozer will be removed.</strong>",
                 "default": false
             },
             {
@@ -27,7 +28,7 @@
                     {"value": "highlight.js", "label": "highlight.js"},
                     {"value": "prismjs", "label": "prismjs"}
                 ],
-                "default": "highlight.js"
+                "default": "prismjs"
             },
             {
                 "name": "syntaxLanguage",

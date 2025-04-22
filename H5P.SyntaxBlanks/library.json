@@ -47,11 +47,11 @@
     ],
     "preloadedJs": [
       {
-        "path": "./h5p.syntaxblanks.js"
+        "path": "./dist/h5p.syntaxblanks.js"
       }
     ],
     "preloadedCss": [
-      { "path": "./css/syntaxhighlighting.css" }
+      { "path": "./dist/css/h5p.syntaxblanks.css" }
     ]
   }
   

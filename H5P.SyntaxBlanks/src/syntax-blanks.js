@@ -2,6 +2,8 @@ import hljs from "highlight.js";
 import prism from "prismjs";
 import decodeHTMLEntities from './decodeSanitzied';
 
+import './../css/syntaxhighlighting.css';
+
 H5P.SyntaxBlanks = (function ($, Blanks) {
   /**
    * @class
@@ -11,7 +13,7 @@ H5P.SyntaxBlanks = (function ($, Blanks) {
 
     const self = this;
 
-    Blanks.call(this, params, contentId, contentData);
+    Blanks.call(self, params, contentId, contentData);
   }
 
   // Inherit from H5P.Blanks
@@ -39,17 +41,15 @@ H5P.SyntaxBlanks = (function ($, Blanks) {
 
       question = self.highlightAll(
         question, 
-        { language: self.params.highLightingBehaviour.syntaxLanguage }
+        self.params.highLightingBehaviour.syntaxLanguage
       );
-
-      question = `<pre><code class="language-${self.params.highLightingBehaviour.syntaxLanguage}">${question}</code></pre>`;
     }
 
     console.log(question);
 
     const markingChar = self.params.clozerMarkingCharacter;
 
-    // Go through the text and run handler on all asterisk
+    // Go through the text and run handler on all asterisk (or other marking character)
     var clozeEnd, clozeStart = question.indexOf(markingChar);
     
     while (clozeStart !== -1 && clozeEnd !== -1) {
@@ -77,27 +77,37 @@ H5P.SyntaxBlanks = (function ($, Blanks) {
   }
 
 
-  SyntaxBlanks.prototype.highlightAll = function (question, options) {
-    const self = this;
+  SyntaxBlanks.prototype.highlightAll = function (question, language) {
+
+    // Replace all <p> tags with new lines before decoding HTML entities (otherwise "decodeHTMLEntities" deletes the <p> tags) 
+    question = question.replace(/<\/?p>/gi, '\n');
 
     const rawCode = decodeHTMLEntities(question);
-    return self.highlightFactory(rawCode, options.language);
-  }
 
-  SyntaxBlanks.prototype.highlightFactory = function(code, language) {
+    console.log(rawCode);
 
+    // Create real DOM nodes so Prism.highlightElement can fire plugins
+    const preEl = document.createElement('pre');
+    preEl.className = 'line-numbers';
 
-    // TODO: Fix prismjs highlighting for other languages
+    const codeEl = document.createElement('code');
+    codeEl.className = `language-${language}`;
+    codeEl.textContent = rawCode;
+
+    preEl.appendChild(codeEl);
+
     if (this.params.highLightingBehaviour.highlightingLibrary === 'prismjs') {
-
-      return prism.highlight(code, prism.languages[language], language);
-
+      // This both highlights and triggers the line‑numbers plugin
+      Prism.highlightElement(codeEl);
     } else {
-
-      // Fallback to default highlighting
-      return hljs.highlight(code, { language: language }).value;
+      // Fallback: highlight with hljs, then manually trigger hook
+      codeEl.innerHTML = hljs.highlight(rawCode, { language }).value;
+      // Manually fire the "complete" hook to let plugins run
+      Prism.hooks.run('complete', { element: codeEl, code: codeEl.innerHTML });
     }
-  }
+
+    return preEl.outerHTML;
+  };
   
   return SyntaxBlanks;
 })(H5P.jQuery, H5P.Blanks);
