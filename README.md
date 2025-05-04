@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 # Prerequisites for Development
 
 1. node 22.x.x or higher 

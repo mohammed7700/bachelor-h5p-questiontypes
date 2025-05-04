@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "h5p-syntax-blanks.js",
   "scripts": {
+    "license": "license-checker --production --summary --out ./THIRD-PARTY-LICENSES.txt",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env NODE_ENV='development' webpack",
     "build": "cross-env NODE_ENV='production' webpack",
@@ -20,6 +21,7 @@
     "babel-plugin-prismjs": "^2.1.0",
     "cross-env": "^7.0.3",
     "css-loader": "^7.1.2",
+    "license-checker": "^25.0.1",
     "mini-css-extract-plugin": "^2.9.2",
     "webpack": "^5.98.0",
     "webpack-cli": "^6.0.1"

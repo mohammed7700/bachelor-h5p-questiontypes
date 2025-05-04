@@ -1,0 +1,2 @@
+├─ MIT: 2
+└─ BSD-3-Clause: 1
