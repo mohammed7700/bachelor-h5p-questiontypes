@@ -6,6 +6,15 @@
     "minorVersion": 0,
     "patchVersion": 0,
     "runnable": 1,
+    "license": "MIT",
+    "author": "Mohammed Schergis (mohammed7700)",
+    "embedTypes": [
+      "iframe"
+    ],
+    "coreApi": {
+      "majorVersion": 1,
+      "minorVersion": 19
+    },
     "preloadedDependencies": [
       {
         "machineName": "H5P.Blanks",
