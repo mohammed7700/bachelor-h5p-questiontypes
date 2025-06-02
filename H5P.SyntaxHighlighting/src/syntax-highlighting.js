@@ -45,7 +45,6 @@ H5P.SyntaxHighlighting =(function () {
             { language: 'javascript' }
         ).value;
 
-        console.log(highlightedCode);
 
         container.insertAdjacentHTML('beforeend', `
             <div class="h5p-syntaxhighlighting">
@@ -80,8 +79,6 @@ H5P.SyntaxHighlighting =(function () {
                 inputEl.style.borderColor = 'red';
               }
             });
-
-            console.log('HI');
       
             feedbackEl.textContent = `You got ${correctCount} / ${inputs.length} correct.`;
         });

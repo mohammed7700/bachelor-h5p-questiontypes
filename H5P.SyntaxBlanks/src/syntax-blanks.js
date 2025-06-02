@@ -1,8 +1,8 @@
 import hljs from "highlight.js";
-import prism from "prismjs";
+import Prism from "prismjs";
 import decodeHTMLEntities from './decodeSanitzied';
 
-import './../css/syntaxhighlighting.css';
+import '../css/syntaxhighlighting.css';
 
 H5P.SyntaxBlanks = (function ($, Blanks) {
   /**
@@ -35,8 +35,6 @@ H5P.SyntaxBlanks = (function ($, Blanks) {
 
     const self = this;
 
-    console.log(question);
-
     if(self.params.highLightingBehaviour.enableSyntaxHighlighting) {
 
       question = self.highlightAll(
@@ -44,8 +42,6 @@ H5P.SyntaxBlanks = (function ($, Blanks) {
         self.params.highLightingBehaviour.syntaxLanguage
       );
     }
-
-    console.log(question);
 
     const markingChar = self.params.clozerMarkingCharacter;
 
@@ -58,7 +54,7 @@ H5P.SyntaxBlanks = (function ($, Blanks) {
       if (clozeEnd === -1) {
         continue; // No end
       }
-      var clozeContent = question.substring(clozeStart, clozeEnd).replaceAll(/<\/?[a-z\-=\ "'\_<>]*\d?>/ig, '');
+      var clozeContent = question.substring(clozeStart, clozeEnd).replaceAll(/<\/?[^>]*\d?>/ig, '');
       var replacer = '';
       if (clozeContent.length) {
         replacer = handler(self.parseSolution(clozeContent));
@@ -73,6 +69,7 @@ H5P.SyntaxBlanks = (function ($, Blanks) {
       // Find the next cloze
       clozeStart = question.indexOf(markingChar, clozeEnd);
     }
+    
     return question;
   }
 
@@ -83,8 +80,6 @@ H5P.SyntaxBlanks = (function ($, Blanks) {
     question = question.replace(/<\/?p>/gi, '\n');
 
     const rawCode = decodeHTMLEntities(question);
-
-    console.log(rawCode);
 
     // Create real DOM nodes so Prism.highlightElement can fire plugins
     const preEl = document.createElement('pre');
