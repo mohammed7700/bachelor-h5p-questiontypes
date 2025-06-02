@@ -9,7 +9,7 @@ module.exports = {
   devtool: nodeEnv === 'production' ? false : 'inline-source-map',
   output: {
     filename: `${libraryName}.js`,
-    path: path.resolve(__dirname, '.')
+    path: path.resolve(__dirname, './dist')
   },
   module: {
     rules: [

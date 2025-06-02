@@ -13,7 +13,7 @@
       "minorVersion": 0
     },
     "preloadedJs": [
-      { "path": "./h5p-syntax-highlighting.js" }
+      { "path": "./dist/h5p-syntax-highlighting.js" }
     ],
     "preloadedCss": [
       { "path": "./css/syntaxhighlighting.css" }
