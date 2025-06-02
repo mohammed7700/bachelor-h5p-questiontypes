@@ -14,5 +14,8 @@
 4. in the libraries folder, run the build script defined in package.json:
     - ```npm run build``` - to build once
     - ```npm run watch``` - rebuilds when ever a file changes
-5. in the root of your development enviroment run:
+5. optionally you might need to resolve H5P Library dependencies
+    - for the Library in question, look up the dependencies in the 'library.json' file
+    - set them up with the 'h5p setup' command (refer to the docs in the h5p-cli)
+6. in the root of your development enviroment run:
     - ```h5p server```
