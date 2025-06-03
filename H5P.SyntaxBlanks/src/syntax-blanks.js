@@ -4,7 +4,7 @@ import decodeHTMLEntities from './decodeSanitzied';
 
 import '../css/syntaxhighlighting.css';
 
-module.exports = H5P.SyntaxBlanks = (function ($, Blanks) {
+H5P.SyntaxBlanks = (function ($, Blanks) {
   /**
    * @class
    * @extends H5P.Blanks
@@ -106,3 +106,5 @@ module.exports = H5P.SyntaxBlanks = (function ($, Blanks) {
   
   return SyntaxBlanks;
 })(H5P.jQuery, H5P.Blanks);
+
+export default H5P.SyntaxBlanks;

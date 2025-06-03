@@ -5,7 +5,7 @@ import decodeHTMLEntities from './decodeSanitzied';
  * @param {object} options - Configuration options.
  * @param {number} id - Unique identifier.
  */
-module.exports = H5P.SyntaxHighlighting =(function () {
+H5P.SyntaxHighlighting =(function () {
     'use strict';
 
     function SyntaxHighlighting(options, id) {
@@ -143,3 +143,5 @@ module.exports = H5P.SyntaxHighlighting =(function () {
 
     return SyntaxHighlighting;
 })();
+
+export default H5P.SyntaxHighlighting;
