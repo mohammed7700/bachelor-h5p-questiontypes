@@ -8,7 +8,7 @@ module.exports = {
   mode: nodeEnv,
   context: path.resolve(__dirname, 'src'),
   entry: {
-    lib:'./syntax-blanks.js'
+    lib:'./dist.js'
   },
   devtool: nodeEnv === 'production' ? false : 'inline-source-map',
   output: {
