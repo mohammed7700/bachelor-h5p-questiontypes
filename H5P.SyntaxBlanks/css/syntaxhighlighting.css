@@ -2,17 +2,13 @@
 pre.line-numbers,
 pre.line-numbers > code {
   all: unset;              /* nuke everything */
-  position: relative;      /* plugin needs this */
+  position: relative;      /* prismjs plugin needs this */
   padding-left: 3.8em;     /* space for the gutter */
   font-family: monospace;  /* keep code looking like code */
   white-space: pre;        /* preserve line breaks */
-  display: block;          /* ensure it's a block */
+  display: block;          /* ensure it's a block; Makes sure the <code> itself is also full‑width */
 }
 
-/* Makes sure the <code> itself is also full‑width */
-pre.line-numbers > code {
-  display: block;
-}
 
 /*!
   Theme: Default
