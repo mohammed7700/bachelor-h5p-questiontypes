@@ -5,7 +5,7 @@ const libraryName = process.env.npm_package_name;
 module.exports = {
   mode: nodeEnv,
   context: path.resolve(__dirname, 'src'),
-  entry: './syntax-highlighting.js',
+  entry: './dist.js',
   devtool: nodeEnv === 'production' ? false : 'inline-source-map',
   output: {
     filename: `${libraryName}.js`,
